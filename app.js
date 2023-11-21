@@ -22,6 +22,13 @@
 
 
 const http=require('http')
+const fs=require('fs')
+fs.writeFile("index.txt","Hello guys",(err,data)=>{
+    console.log("data addede")
+})
+fs.readFile("index.txt",(err,data)=>{
+    console.log(data.toString())
+  })
 
 const server=http.createServer((req,res)=>{
 
@@ -44,6 +51,7 @@ const server=http.createServer((req,res)=>{
         res.end()
         break
       }
+
 })
 
 server.listen(4000,"localhost",()=>{
